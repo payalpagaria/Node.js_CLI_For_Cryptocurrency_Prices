@@ -1,18 +1,19 @@
 const program=require('commander');
+const key=require("../commands/key")
 
 program
 .command('set')
 .description("set API key -- Get at https://nomics.com/")
-.action(()=>console.log("set the api key"))
+.action(key.set)
 
 program
 .command('show')
 .description("show API key ")
-.action(()=>console.log("show the api key"))
+.action(key.show)
 
 program
-.command('delete')
-.description("delete API key ")
-.action(()=>console.log("delete the api key"))
+.command('remove')
+.description("remove API key ")
+.action(key.remove)
 
 program.parse(process.argv)
