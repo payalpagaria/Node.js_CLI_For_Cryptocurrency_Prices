@@ -1,7 +1,9 @@
 #!/usr/bin/env node
-const program=require('commander');
-//gives the version -coindex -V 
+const program = require('commander');
+const pkg = require('../package.json');
+
 program
-.version('1.0.0')
-.command("key","Manage API key -- https://nomics.com/")
-.parse(process.argv);
+  .version(pkg.version)
+  .command('key', 'Manage API Key -- https://nomics.com')
+  .command('check', 'Check Coin Price Info')
+  .parse(process.argv);
