@@ -19,10 +19,22 @@ const key={
           }
     }, 
     show(){
-        console.log("hello from show");
+        try {
+            const keyManager=new KeyManager();
+            const key=keyManager.getKey();
+            console.log("The current key is: ",key);
+        } catch (error) {
+            console.log(error.message.red);
+        }
     },
     remove(){
-        console.log("hello from remove");
+        try {
+            const keyManager=new KeyManager();
+            keyManager.deleteKey();
+            console.log("The key has been removed".yellow);
+        } catch (error) {
+            console.log(error.message.red);
+        }
     }
 }
 module.exports=key;
