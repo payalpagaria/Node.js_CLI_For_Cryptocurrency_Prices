@@ -1,6 +1,6 @@
 const check={
-   price(){
-        console.log("Hello");
+   price(cmd){
+        console.log(cmd.coin,cmd.cur);
     }
 }
 module.exports=check;
